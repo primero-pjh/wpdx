@@ -1,0 +1,21 @@
+{
+  "userId": "userId",
+  "password": "password",
+  "phoneNumber": "phoneNumber",
+  "Requiredpassword": "userId is required",
+  "RequireduserId": "userId is required",
+  "RequiredPhoneNumber": "phoneNumber is required",
+  "RememberMe": "RememberMe?",
+  "Signup": "Signup",
+  "ForgetId": "Forget Id?",
+  "Login": "Login",
+  "Logout": "Logout",
+  "Confirm": "Confirm",
+  "KakaoLogin": "KakaoLogin",
+  "Loading": "Loading...",
+  "Chat": "Chat",
+  "Home": "Home",
+  "Search": "Search",
+  "Community": "Community",
+  "Setting": "Setting"
+}

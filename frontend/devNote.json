@@ -1,0 +1,28 @@
+{
+	"패치노트": {
+		"0.1.0": [
+			"> quasar css framework 구현",
+			"> vue 프레임워크  구현",
+			"> vue-router 구현",
+			"> vuex 구현",
+			"> mysql2 연동 완료",
+			"> cfg 정의"
+		],
+		"0.2.1": [
+			"> jwt login 구현",
+			"> jwt acceess token & refresh token 구현"
+		],
+		"0.2.2": [
+			"> http-only 설정"
+		]
+	}
+}
+
+
+/*
+			"> socket io, socket io client 연동 완료",
+			"> socket middle ware -> jwt 자동 검사",
+			"> socket io auth -> handshake 에 jwt 삽입",
+			"> err_code 정의",
+			"> i18n 기능 부착",
+*/

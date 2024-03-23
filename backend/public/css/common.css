@@ -1,0 +1,116 @@
+/* padding */
+.pd5 { padding: 5px; }
+.pd10 { padding: 10px; }
+.pd15 { padding: 15px; }
+.pd20 { padding: 20px; }
+
+.pa-sm { padding: 8px; }
+.pa-md { padding: 16px; }
+.pa-lg { padding: 24px; }
+.pl-sm { padding-left: 8px; }
+.pl-md { padding-left: 16px; }
+.pl-lg { padding-left: 24px; }
+.pr-sm { padding-right: 8px; }
+.pr-md { padding-right: 16px; }
+.pr-lg { padding-right: 24px; }
+.pt-sm { padding-top: 8px; }
+.pt-md { padding-top: 16px; }
+.pt-lg { padding-top: 24px; }
+.pb-sm { padding-bottom: 8px; }
+.pb-md { padding-bottom: 16px; }
+.pb-lg { padding-bottom: 24px; }
+.px-sm { padding: 0 8px; }
+.px-md { padding: 0 16px; }
+.px-lg { padding: 0 24px; }
+.py-sm { padding: 8px 0; }
+.py-md { padding: 16px 0; }
+.py-lg { padding: 24px 0; }
+
+/* margin */
+.mt-xs { margin-top: 4px; }
+.mt-sm { margin-top: 8px; }
+.mt-md { margin-top: 16px; }
+.mt-lg { margin-top: 24px; }
+.mr-sm { margin-right: 8px; }
+.mr-md { margin-right: 16px; }
+.mr-lg { margin-right: 24px; }
+
+/* font */
+.ft12 {font-size: 12px;}
+.ft14 {font-size: 14px;}
+.ft16 {font-size: 16px;}
+.ft18 {font-size: 18px;}
+.ft20 {font-size: 20px;}
+.ft24 {font-size: 24px;}
+
+.ft-xs {font-size: 12px;}
+.ft-sm {font-size: 16px;}
+.ft-md {font-size: 20px;}
+.ft-lg {font-size: 24px;}
+
+.text-center {text-align: center;}
+.text-right {text-align: right;}
+.text-left {text-align: left;}
+
+.text-bold {font-weight: bold;}
+
+.text-white {color: white;}
+.text-primary {color: #1976d2;}
+.text-secondary {color: #26A69A;}
+.text-accent {color: #9C27B0;}
+.text-positive {color: #21BA45;}
+.text-negative {color: #C10015;}
+.text-info {color: #31CCEC;}
+.text-warning {color: #F2C037;}
+.text-dark {color: #1d1d1d;}
+.text-dark-page {color: #121212}
+.text-grey {color: grey;}
+
+/* margin */
+.mt5 {margin-top: 5px;}
+
+/* background-color */
+.bg-white {background-color: white;}
+.bg-default {background-color: white;}
+
+/* width */
+.w90p{width:90%;}
+.w100p{width:100%;}
+
+/* flex */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@font-face {
+  font-family: "KakaoBold";
+  src: url("/public/fonts/kakao_fonts/KakaoBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "KakaoRegular";
+  src: url("/public/fonts/kakao_fonts/KakaoRegular.ttf") format("truetype");
+}
+
+.fkB {
+  font-family: KakaoBold;
+}
+.fkR {
+  font-family: KakaoRegular;
+}
+
+
+
+#app {
+  height: 100%;
+}
+html {
+  height: 100%;
+}
