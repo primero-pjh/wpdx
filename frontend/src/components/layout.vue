@@ -61,6 +61,16 @@
                                 </q-item-label>
                             </q-item-section>
                         </q-item>
+                        <q-item clickable v-ripple @click="$store.state.goto_page('/schema')">
+                            <q-item-section class="faSB text-body1" >
+                                <q-item-label>개념적 스키마</q-item-label>
+                            </q-item-section>
+                            <q-item-section side>
+                                <q-item-label avatar v-if="$route.name === 'schema'">
+                                    <q-icon name="check" color="green" size="sm" />
+                                </q-item-label>
+                            </q-item-section>
+                        </q-item>
                         <q-item clickable v-ripple @click="$store.state.goto_page('/home')">
                             <q-item-section class="faSB text-body1" >
                                 <q-item-label>학원 재원생</q-item-label>
