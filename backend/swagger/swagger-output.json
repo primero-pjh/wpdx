@@ -11,7 +11,7 @@
     }
   ],
   "paths": {
-    "/api/datasets/schoolInfos": {
+    "/api/datasets/schoolInfo": {
       "get": {
         "description": "",
         "responses": {

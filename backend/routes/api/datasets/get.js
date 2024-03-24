@@ -6,7 +6,7 @@ const router = express.Router();
 /* 
     
 */
-router.get('/api/datasets/schoolInfos', async (req, res, next) => {
+router.get('/api/datasets/schoolInfo', async (req, res, next) => {
     const db = require(`${path}/mysql2`);
 
     let keyword = req.params.keyword;
@@ -15,11 +15,10 @@ router.get('/api/datasets/schoolInfos', async (req, res, next) => {
         SELECT *
         FROM datasets
         WHERE keyword=?
-    `, ['schoolInfos']);
-    
+    `, ['schoolInfo']);
     return res.json({
         success: 1,
-        rows: rows[0].value,
+        rows: rows[0]?.value,
     })
 });
 
