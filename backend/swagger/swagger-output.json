@@ -21,6 +21,16 @@
         }
       }
     },
+    "/api/school": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/lms": {
       "get": {
         "description": "",

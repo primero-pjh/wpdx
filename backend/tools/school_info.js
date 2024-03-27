@@ -28,10 +28,18 @@ axios.get("https://open.neis.go.kr/hub/schoolInfo", {
 }).then(async (res) => {
     let data = res.data;
     let rows = data.schoolInfo[1]['row'];
-    await db.query(`
-        INSERT INTO datasets (keyword, value)
-        VALUES (?, ?)
-    `, ['schoolInfo', JSON.stringify(rows)]);
+
+    let middleSchools = [];
+    rows.map((x) => {
+        if(x.SCHUL_KND_SC_NM == '중학교') {
+            middleSchools.push(x);
+        }
+    });
+    console.log(middleSchools);
+    // await db.query(`
+    //     INSERT INTO datasets (keyword, value)
+    //     VALUES (?, ?)
+    // `, ['schoolInfo', JSON.stringify(rows)]);
 
     process.exit()
 }).catch((err) => {

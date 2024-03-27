@@ -19,7 +19,7 @@ const knex = require('knex')({
 
 router.get('/api/lms', async (req, res, next) => {
     let rows = await knex.raw(`
-        SELECT u.CenterId, sp.SchoolLevel, sp.SchoolGrade, COUNT(*) AS count
+        SELECT u.CenterId, sp.SchoolLevel, sp.SchoolGrade, sp.SchoolName, COUNT(*) AS count
         FROM ApplicationUsers AS u 
         JOIN StudentProfiles AS sp ON u.UID = sp.UID
         WHERE u.UID IN (
@@ -39,7 +39,7 @@ router.get('/api/lms', async (req, res, next) => {
                 )
             GROUP BY cs.StudentUID
         )
-        GROUP BY u.CenterId, sp.SchoolLevel, sp.SchoolGrade
+        GROUP BY u.CenterId, sp.SchoolLevel, sp.SchoolGrade, sp.SchoolName
         ORDER BY u.CenterId, sp.SchoolGrade
     `, []);
     

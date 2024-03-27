@@ -6,6 +6,8 @@ import router from "../router"
 const store = createStore({
     state : {
         schoolInfos: [],
+
+        middleSchools: [],
         presentInfos: [],
 
         center_dict: {
@@ -72,13 +74,12 @@ const store = createStore({
     mutations: {
         loadSchoolInfo(state) {
             let vm = this;
-            axios.get(`/api/datasets/schoolInfo`, {
+            axios.get(`/api/school`, {
 
             }).then((res) => {
                 let data = res.data;
                 if(data.success) {
-                    let rows = data.rows;
-                    state.schoolInfos = JSON.parse(rows);
+                    state.middleSchools = data.rows;
                 }
             }).catch((err) => {
                 console.log(err);

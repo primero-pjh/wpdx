@@ -29,7 +29,8 @@ app.use(cors({origin: '*'}));
 
 // dfs('./routes/api');
 app.use('/', require('./routes/api/datasets/get'));
-app.use('/', require('./routes/api/datasets/kosis.get'));
+app.use('/', require('./routes/api/school/get'));
+app.use('/', require('./routes/api/datasets/school.lat.long.post'));
 
 app.use('/', require('./routes/api/lms/get'));
 

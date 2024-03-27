@@ -29,7 +29,7 @@
                     <q-separator />
                     <q-list class="q-px-md">
                         <q-item-label class="faSB q-pt-md q-px-sm text-grey-7 text-h6">통계</q-item-label>
-                         <q-item clickable v-ripple @click="$store.state.goto_page('/dashboard')">
+                        <!-- <q-item clickable v-ripple @click="$store.state.goto_page('/dashboard')">
                             <q-item-section class="faSB text-body1" >
                                 <q-item-label>대시보드</q-item-label>
                             </q-item-section>
@@ -38,7 +38,7 @@
                                     <q-icon name="check" color="green" size="sm" />
                                 </q-item-label>
                             </q-item-section>
-                        </q-item>
+                        </q-item> -->
                         <q-item clickable v-ripple @click="$store.state.goto_page('/stat')">
                             <q-item-section class="faSB text-body1" >
                                 <q-item-label>지역별 학생 분포도</q-item-label>
