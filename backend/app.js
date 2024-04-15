@@ -34,6 +34,9 @@ app.use('/', require('./routes/api/datasets/school.lat.long.post'));
 
 app.use('/', require('./routes/api/lms/get'));
 
+app.use('/', require('./routes/api/dx/23_middle_student.router.get'));
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
