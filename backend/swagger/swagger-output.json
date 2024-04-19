@@ -40,6 +40,16 @@
           }
         }
       }
+    },
+    "/api/keras/pre": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {

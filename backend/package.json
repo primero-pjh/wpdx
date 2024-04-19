@@ -8,6 +8,7 @@
     "prestart": "node ./modules/swagger.js"
   },
   "dependencies": {
+    "@tensorflow/tfjs-node": "^3.1.0",
     "app-root-path": "^3.1.0",
     "atob": "^2.1.2",
     "axios": "^1.6.8",

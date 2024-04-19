@@ -71,6 +71,18 @@
                                 </q-item-label>
                             </q-item-section>
                         </q-item>
+                        <q-separator />
+                        <q-item-label class="faSB q-pt-md q-px-sm text-grey-7 text-h6">AI</q-item-label>
+                        <q-item clickable v-ripple @click="$store.state.goto_page('/ai/pre')">
+                            <q-item-section class="faSB text-body1" >
+                                <q-item-label>재원 예측기</q-item-label>
+                            </q-item-section>
+                            <q-item-section side>
+                                <q-item-label avatar v-if="$route.name === 'erd'">
+                                    <q-icon name="check" color="green" size="sm" />
+                                </q-item-label>
+                            </q-item-section>
+                        </q-item>
                         <!-- <q-item clickable v-ripple @click="$store.state.goto_page('/home')">
                             <q-item-section class="faSB text-body1" >
                                 <q-item-label>학원 재원생</q-item-label>

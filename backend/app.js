@@ -33,6 +33,10 @@ app.use('/', require('./routes/api/school/get'));
 app.use('/', require('./routes/api/datasets/school.lat.long.post'));
 
 app.use('/', require('./routes/api/lms/get'));
+app.use('/', require('./routes/api/lms/student/studentName.get'));
+app.use('/', require('./routes/api/lms/student/UID.get'));
+
+app.use('/', require('./routes/api/keras/pre.js'));
 
 app.use('/', require('./routes/api/dx/23_middle_student.router.get'));
 
