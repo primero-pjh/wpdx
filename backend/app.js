@@ -39,6 +39,7 @@ app.use('/', require('./routes/api/lms/student/UID.get'));
 app.use('/', require('./routes/api/keras/pre.js'));
 
 app.use('/', require('./routes/api/dx/23_middle_student.router.get'));
+app.use('/', require('./routes/api/dx/22_middle_student.router.get'));
 
 
 

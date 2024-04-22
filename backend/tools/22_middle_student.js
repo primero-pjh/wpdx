@@ -37,32 +37,32 @@ async function init_student() {
             (
                 SELECT COUNT(*)
                 FROM Counsels AS csl
-                WHERE csl.StudentUID=u.UID AND csl.CounselType = 'withdraw' AND (csl.CounselDate >= '2023-01-01' AND csl.CounselDate <= '2023-12-31')
+                WHERE csl.StudentUID=u.UID AND csl.CounselType = 'withdraw' AND (csl.CounselDate >= '2022-01-01' AND csl.CounselDate <= '2022-12-31')
             ) AS withdraw_csl_count,
             (
                 SELECT COUNT(*)
                 FROM Counsels AS csl
-                WHERE csl.StudentUID=u.UID AND csl.CounselType != 'withdraw' AND (csl.CounselDate >= '2023-01-01' AND csl.CounselDate <= '2023-12-31')
+                WHERE csl.StudentUID=u.UID AND csl.CounselType != 'withdraw' AND (csl.CounselDate >= '2022-01-01' AND csl.CounselDate <= '2022-12-31')
             ) AS remain_csl_count,
             (
                 SELECT COUNT(*)
                 FROM LectureStudents AS ls
-                WHERE ls.StudentUID=u.UID AND ls.LectureType = 2 AND (ls.SupplyDate >= '2023-01-01' AND ls.SupplyDate <= '2023-12-31')
+                WHERE ls.StudentUID=u.UID AND ls.LectureType = 2 AND (ls.SupplyDate >= '2022-01-01' AND ls.SupplyDate <= '2022-12-31')
             ) AS supply_count,
             (
                 SELECT COUNT(*)
                 FROM LectureStudents AS ls
-                WHERE ls.StudentUID=u.UID AND ls.LectureType = 3 AND (ls.SupplyDate >= '2023-01-01' AND ls.SupplyDate <= '2023-12-31')
+                WHERE ls.StudentUID=u.UID AND ls.LectureType = 3 AND (ls.SupplyDate >= '2022-01-01' AND ls.SupplyDate <= '2022-12-31')
             ) AS clinic_count,
             (
                 SELECT COUNT(*)
                 FROM LectureStudents AS ls
-                WHERE ls.StudentUID=u.UID AND (ls.LectureDate >= '2023-01-01' AND ls.LectureDate <= '2023-12-31') AND ls.AttendanceStatus = 'absence'
+                WHERE ls.StudentUID=u.UID AND (ls.LectureDate >= '2022-01-01' AND ls.LectureDate <= '2022-12-31') AND ls.AttendanceStatus = 'absence'
             ) AS abs_count,
             (
                 SELECT COUNT(*)
                 FROM LectureStudents AS ls
-                WHERE ls.StudentUID=u.UID AND (ls.LectureDate >= '2023-01-01' AND ls.LectureDate <= '2023-12-31') AND ls.AttendanceStatus = 'attendance'
+                WHERE ls.StudentUID=u.UID AND (ls.LectureDate >= '2022-01-01' AND ls.LectureDate <= '2022-12-31') AND ls.AttendanceStatus = 'attendance'
             ) AS pre_count
         FROM ApplicationUsers AS u
         JOIN StudentProfiles AS sp ON u.UID = sp.UID
@@ -71,26 +71,27 @@ async function init_student() {
             FROM CourseStudents AS cs
             JOIN CourseTags AS ct ON cs.CourseTagId = ct.CourseTagId
             JOIN CourseGroups AS cg ON ct.CourseGroupId = cg.CourseGroupId
-            WHERE cg.Title != N'대기그룹' AND cs.NewDate >= '2023-01-01'
+            WHERE cg.Title != N'대기그룹' AND cs.NewDate >= '2022-01-01'
             GROUP BY cs.StudentUID
         ) AS cs ON u.UID = cs.StudentUID
-        WHERE sp.StudentGrade IN (15, 16, 17) AND u.CenterId != 3
+        WHERE sp.StudentGrade IN (16, 17, 18) AND u.CenterId != 3
         ORDER BY u.UID asc
     `, []);
-    db.query(`DELETE FROM 23_middle_student`);
+
+    db.query(`DELETE FROM 22_middle_student`);
 
     for(let i = 0; i < user_list.length; i++) {
         let user = user_list[i];
         let target = 0;
         if(user.max_sche_date) {
-            if(user.max_sche_date >= '2024-01-01') { target = 1; }
+            if(user.max_sche_date >= '2023-01-01') { target = 1; }
         } else {
             target = 1;
         }
 
         console.log(`${i}번째 학생 완료`);
         db.query(`
-            INSERT INTO 23_middle_student 
+            INSERT INTO 22_middle_student 
             (UID, CenterId, StudentName, SchoolName, SchoolGrade, SchoolLevel, StudentGrade, Address, Address2, StudentStatus, cs_count, max_sche_date, 
                 withdraw_csl_count, remain_csl_count, supply_count, clinic_count, abs_count, pre_count, target)
             VALUES 

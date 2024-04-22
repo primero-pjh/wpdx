@@ -7,7 +7,7 @@
                     <q-icon name="search" />
                 </template>
             </q-input>
-            <template v-if="search_student_list.length > 0">
+            <template v-if="search_student_list && search_student_list.length > 0">
                 <q-list bordered separator class="q-mt-sm bg-white">
                     <q-expansion-item expand-separator v-for="row, idx in search_student_list" :key="idx" @show="showStudentDetail(row, idx)"
                         class="q-pa-sm"
@@ -139,9 +139,11 @@ export default {
             }).then((res) => {
                 let data = res.data;
                 let value = data.value;
-                student["value"] = (value*100).toFixed(0);
+                student["value"] = parseInt((value*100).toFixed(0));
                 student.isLoading = false;
-            })
+            }).catch((err) => {
+                console.error("파이썬 서버가 켜져있지 않습니다.");
+            });
         },
         loadStudent() {
             let vm = this;
@@ -167,6 +169,6 @@ export default {
     mounted() {
         let vm = this;
         vm.loadStudent();
-    }
+    },
 }
 </script>
