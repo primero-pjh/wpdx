@@ -1,12 +1,19 @@
 <template>
     <div id="ai_preVue">
         <div>
-            <q-input placeholder="학생 이름을 입력하세요." v-model="search_student_name"
-                filled dense class="faSB text-body1" @keyup.enter="loadStudent">
-                <template v-slot:prepend>
-                    <q-icon name="search" />
-                </template>
-            </q-input>
+            <div style="display: flex;">
+                <div>
+                    <q-input placeholder="학생 이름을 입력하세요." v-model="search_student_name"
+                        filled dense class="faSB text-body1" @keyup.enter="loadStudent">
+                        <template v-slot:prepend>
+                            <q-icon name="search" />
+                        </template>
+                    </q-input>
+                </div>
+                <div class="q-ml-md">
+                    <q-btn label="랜덤 검색" color="positive" class="faSB" @click="random_search_student" />
+                </div>
+            </div>
             <template v-if="search_student_list && search_student_list.length > 0">
                 <q-list bordered separator class="q-mt-sm bg-white">
                     <q-expansion-item expand-separator v-for="row, idx in search_student_list" :key="idx" @show="showStudentDetail(row, idx)"
@@ -131,6 +138,10 @@ export default {
         }
     },
     methods: {
+        random_search_student() {
+            let vm = this;
+            console.log("random_search_student");
+        },
         predict_student(student) {
             let vm = this;
             student.isLoading = true;

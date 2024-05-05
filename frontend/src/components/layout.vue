@@ -78,7 +78,7 @@
                                 <q-item-label>재원 예측기</q-item-label>
                             </q-item-section>
                             <q-item-section side>
-                                <q-item-label avatar v-if="$route.name === 'erd'">
+                                <q-item-label avatar v-if="$route.name === 'ai_pre'">
                                     <q-icon name="check" color="green" size="sm" />
                                 </q-item-label>
                             </q-item-section>
